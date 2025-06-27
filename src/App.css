@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --font-anton: "Anton SC", "sans-serif";
+  --font-archivo: "Archivo Black", "sans-serif";
+  --font-lobster: "Lobster", "cursive";
+}
