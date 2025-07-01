@@ -1,19 +1,19 @@
-import './App.css'
-import Calendar from "./components/Calendar"
-import Hero from "./components/Hero"
-import Menu from "./components/Menu"
-import TopBar from "./components/TopBar"
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import TopBar from "./components/TopBar";
+import Home from "./components/Home";
+import Survey from "./components/Survey";
 
 function App() {
-
   return (
-   <div className="app">
-    <TopBar />
-    <Hero />
-    <Menu />
-    <Calendar />
-   </div>
-  )
+    <div className="app">
+      <TopBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/survey" element={<Survey />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
