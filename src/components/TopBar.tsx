@@ -13,18 +13,18 @@ const TopBar = () => {
   };
 
   return (
-    <header className="h-auto fixed top-0 left-4 right-4 sm:left-10 lg:left-20 sm:right-10 lg:right-20 z-50 pt-4 xl:pt-6 xxl:pt-10">
-      <div className="relative bg-[#343434] rounded-[19px] py-2 px-4 sm:px-5 xl:py-4 xl:px-5 flex items-center gap-x-2 xsm:gap-x-3 md:gap-x-5 z-20 xl:overflow-hidden">
+    <header className="fixed top-0 left-0 right-0 z-50 px-2 sm:px-4 md:px-10 lg:px-20 pt-3 sm:pt-4 xl:pt-6 w-full max-w-full">
+      <div className="relative bg-[#343434] rounded-2xl py-3 px-4 sm:px-5 xl:py-4 xl:px-6 flex items-center justify-between z-20 max-w-full overflow-hidden">
         {/* logo */}
-        <div className="">
+        <div className="flex-shrink-0">
           <Link
             to="/"
             className="text-center text-white flex flex-col"
             onClick={closeMenu}
           >
-            <span className="text-xl sm:text-2xl xl:text-3xl font-bold tracking-wide font-lobster">
-              K-TORA
-              <span className="text-xs sm:text-xs xl:text-xl font-medium tracking-widest opacity-90 -mt-1 ml-2 font-archivo">
+            <span className="text-lg sm:text-xl md:text-2xl xl:text-3xl font-bold tracking-wide font-lobster whitespace-nowrap">
+              K-Tora <br/>
+              <span className="text-xs sm:text-sm xl:text-xl font-medium tracking-widest opacity-90 ml-1 sm:ml-2 font-poppins">
                 KITCHEN
               </span>
             </span>
@@ -32,84 +32,75 @@ const TopBar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex flex-grow flex-wrap justify-end gap-x-4">
-          <div className="flex-none relative xl:mr-2">
-            <Link
-              to="/"
-              className="group inline-block relative overflow-hidden font-copy text-white text-base text-[22px] md:text-xl font-medium leading-[30px] md:leading-[40px]"
-            >
-              Home
-            </Link>
-          </div>
-          <div className="flex-none relative xl:mr-2">
-            <a
-              href="/about"
-              className="group inline-block relative overflow-hidden font-copy text-white text-base text-[22px] md:text-xl font-medium leading-[30px] md:leading-[40px]"
-            >
-              About
-            </a>
-          </div>
-          <div className="flex-none relative xl:mr-2">
-            <a
-              href="/menu"
-              className="group inline-block relative overflow-hidden font-copy text-white text-base text-[22px] md:text-xl font-medium leading-[30px] md:leading-[40px]"
-            >
-              Menu
-            </a>
-          </div>
-          <div className="flex-none relative xl:mr-2">
-            <Link
-              to="/survey"
-              className="group inline-block relative overflow-hidden font-copy text-white text-base text-[22px] md:text-xl font-medium leading-[30px] md:leading-[40px]"
-            >
-              Feedback
-            </Link>
-          </div>
-          <div className="flex-none relative xl:mr-2">
-            <a
-              href="/contact"
-              className="group inline-block relative overflow-hidden font-copy text-white text-base text-[22px] md:text-xl font-medium leading-[30px] md:leading-[40px]"
-            >
-              Contact
-            </a>
-          </div>
+        <div className="hidden lg:flex items-center gap-x-3 xl:gap-x-4">
+          <Link
+            to="/"
+            className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
+          >
+            Home
+          </Link>
+          <a
+            href="/about"
+            className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
+          >
+            About
+          </a>
+          <a
+            href="/menu"
+            className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
+          >
+            Menu
+          </a>
+          <Link
+            to="/survey"
+            className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
+          >
+            Feedback
+          </Link>
+          <a
+            href="/contact"
+            className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
+          >
+            Contact
+          </a>
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="lg:hidden ml-auto">
+        <div className="lg:hidden flex-shrink-0">
           <button
             onClick={toggleMenu}
-            className="group cursor-pointer w-8 h-6 relative p-1"
+            className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-white/20"
             aria-label="Toggle menu"
           >
-            <span
-              className={`w-full h-0.5 left-0 top-1 absolute bg-white rounded-full transition-all duration-300 ${
-                isMenuOpen ? "rotate-45 top-3" : "group-hover:-translate-y-0.5"
-              }`}
-            ></span>
-            <span
-              className={`w-full h-0.5 left-0 top-3 absolute bg-white rounded-full transition-all duration-300 ${
-                isMenuOpen ? "opacity-0" : "group-hover:opacity-70"
-              }`}
-            ></span>
-            <span
-              className={`w-full h-0.5 left-0 top-5 absolute bg-white rounded-full transition-all duration-300 ${
-                isMenuOpen ? "-rotate-45 top-3" : "group-hover:translate-y-0.5"
-              }`}
-            ></span>
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span
+                className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                  isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
+                }`}
+              ></span>
+              <span
+                className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                  isMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              ></span>
+              <span
+                className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                  isMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-1"
+                }`}
+              ></span>
+            </div>
           </button>
         </div>
-      </div>
-
+      </div>{" "}
       {/* Mobile Dropdown Menu */}
       <div
-        className={`lg:hidden absolute top-full left-4 right-4 sm:left-10 sm:right-10 mt-2 transition-all duration-300 ease-in-out ${
+        className={`lg:hidden absolute top-full left-2 right-2 sm:left-4 sm:right-4 mt-2 transition-all duration-300 ease-in-out ${
           isMenuOpen
             ? "opacity-100 translate-y-0 visible"
             : "opacity-0 -translate-y-4 invisible"
         }`}
       >
-        <div className="bg-[#343434] rounded-[19px] py-4 px-4 shadow-lg border border-white/10">
+        <div className="bg-[#343434] rounded-2xl py-4 px-4 shadow-lg border border-white/10">
           <nav className="flex flex-col space-y-3">
             <Link
               to="/"
@@ -149,7 +140,6 @@ const TopBar = () => {
           </nav>
         </div>
       </div>
-
       {/* Mobile Menu Backdrop */}
       {isMenuOpen && (
         <div

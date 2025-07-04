@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'archivo': ['Archivo Black', 'sans-serif'],
+        'anton': ['Anton SC', 'sans-serif'],
       }
     }
   },
