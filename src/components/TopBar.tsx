@@ -23,7 +23,7 @@ const TopBar = () => {
             onClick={closeMenu}
           >
             <span className="text-lg sm:text-xl md:text-2xl xl:text-3xl font-bold tracking-wide font-lobster whitespace-nowrap">
-              K-Tora <br/>
+              K-Tora <br />
               <span className="text-xs sm:text-sm xl:text-xl font-medium tracking-widest opacity-90 ml-1 sm:ml-2 font-poppins">
                 KITCHEN
               </span>
@@ -51,6 +51,12 @@ const TopBar = () => {
           >
             Menu
           </a>
+          <Link
+            to="/kei-trucks"
+            className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
+          >
+            Kei Trucks
+          </Link>
           <Link
             to="/survey"
             className="text-white text-base xl:text-lg font-medium hover:text-gray-200 transition-colors whitespace-nowrap"
@@ -123,6 +129,13 @@ const TopBar = () => {
             >
               Menu
             </a>
+            <Link
+              to="/kei-trucks"
+              onClick={closeMenu}
+              className="text-white text-lg font-medium py-3 px-4 rounded-lg hover:bg-white/10 transition-colors active:scale-95"
+            >
+              Kei Trucks
+            </Link>
             <Link
               to="/survey"
               onClick={closeMenu}
